@@ -13,7 +13,7 @@ if (menuToggle && siteNav) {
   siteNav.addEventListener("click", (event) => {
     const target = event.target;
 
-    if (target instanceof HTMLAnchorElement && target.hash) {
+    if (target instanceof HTMLAnchorElement) {
       siteNav.classList.remove("is-open");
       document.body.classList.remove("is-menu-open");
       menuToggle.setAttribute("aria-expanded", "false");
@@ -26,6 +26,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     const targetId = link.getAttribute("href");
 
     if (!targetId || targetId === "#") {
+      event.preventDefault();
       return;
     }
 

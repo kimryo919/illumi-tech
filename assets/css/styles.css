@@ -79,6 +79,10 @@ svg {
 .section-heading h2,
 .two-column h2,
 .company-grid h2,
+.related-card h2,
+.page-hero h1,
+.profile-body h2,
+.profile-note h2,
 .contact-copy h2 {
   margin: 0;
   color: var(--color-navy);
@@ -90,6 +94,10 @@ svg {
 .section-heading p:not(.eyebrow),
 .section-description,
 .section-copy p,
+.related-card p,
+.page-hero p,
+.profile-body p,
+.profile-note p,
 .contact-copy p {
   color: var(--color-slate);
 }
@@ -150,6 +158,23 @@ svg {
 
 .button-full {
   width: 100%;
+}
+
+.text-link {
+  display: inline-flex;
+  margin-top: 18px;
+  color: var(--color-blue);
+  font-weight: 800;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  color: var(--color-blue-dark);
+}
+
+.note-text {
+  margin: 14px 0 0;
+  font-size: 0.9rem;
 }
 
 .site-header {
@@ -419,6 +444,9 @@ svg {
 
 .service-card,
 .principle-card,
+.related-card,
+.profile-card,
+.profile-note,
 .contact-form {
   border: 1px solid var(--color-line);
   border-radius: var(--radius-medium);
@@ -427,7 +455,9 @@ svg {
 }
 
 .service-card,
-.principle-card {
+.principle-card,
+.profile-card,
+.profile-note {
   padding: 28px;
 }
 
@@ -457,6 +487,116 @@ svg {
 .section-action {
   margin-top: 34px;
   text-align: center;
+}
+
+.related-section {
+  background:
+    radial-gradient(circle at top right, rgba(32, 184, 216, 0.14), transparent 34%),
+    linear-gradient(135deg, #f8fbff, var(--color-white));
+}
+
+.related-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: center;
+  padding: 34px;
+}
+
+.related-card h2 {
+  margin-bottom: 14px;
+}
+
+.related-card p {
+  max-width: 720px;
+  margin: 0;
+}
+
+.page-hero {
+  background:
+    radial-gradient(circle at top right, rgba(32, 184, 216, 0.16), transparent 34%),
+    var(--color-muted);
+}
+
+.page-hero-inner {
+  max-width: 860px;
+}
+
+.page-hero h1 {
+  margin-bottom: 18px;
+}
+
+.page-hero p {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.profile-grid {
+  display: grid;
+  gap: 28px;
+}
+
+.profile-card {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 30px;
+}
+
+.profile-photo {
+  display: grid;
+  width: 150px;
+  height: 150px;
+  place-items: center;
+  color: var(--color-white);
+  background:
+    radial-gradient(circle at 70% 20%, rgba(32, 184, 216, 0.72), transparent 34%),
+    var(--color-navy);
+  border-radius: 50%;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.profile-photo-secondary {
+  background:
+    radial-gradient(circle at 70% 20%, rgba(21, 84, 209, 0.74), transparent 34%),
+    #17345c;
+}
+
+.profile-role {
+  margin: 0 0 6px;
+  color: var(--color-blue) !important;
+  font-weight: 800;
+}
+
+.profile-body h2 {
+  margin-bottom: 2px;
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+}
+
+.profile-kana {
+  margin: 0 0 20px;
+  font-size: 0.92rem;
+}
+
+.profile-list {
+  display: grid;
+  gap: 8px;
+  margin: 20px 0 0;
+  padding-left: 1.25em;
+  color: var(--color-slate);
+}
+
+.profile-note {
+  max-width: 860px;
+}
+
+.profile-note h2 {
+  margin-bottom: 14px;
+}
+
+.profile-note p {
+  margin: 0 0 24px;
 }
 
 .company-list {
@@ -590,6 +730,8 @@ svg {
   .hero-grid,
   .two-column,
   .company-grid,
+  .related-card,
+  .profile-card,
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -597,6 +739,8 @@ svg {
   .hero-grid,
   .two-column,
   .company-grid,
+  .related-card,
+  .profile-card,
   .contact-grid {
     gap: 38px;
   }
@@ -701,8 +845,17 @@ svg {
 
   .service-card,
   .principle-card,
+  .related-card,
+  .profile-card,
+  .profile-note,
   .contact-form {
     padding: 22px;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    font-size: 2rem;
   }
 
   .company-list div {
