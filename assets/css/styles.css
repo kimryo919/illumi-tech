@@ -198,21 +198,19 @@ svg {
 .footer-logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  color: var(--color-navy);
-  font-weight: 800;
-  letter-spacing: -0.02em;
 }
 
-.site-logo-mark {
-  display: grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  color: var(--color-white);
-  background: var(--color-navy);
-  border-radius: 10px;
-  font-weight: 800;
+.site-logo-img {
+  display: block;
+  height: 36px;
+  width: auto;
+}
+
+.footer-logo-img {
+  display: block;
+  height: 30px;
+  width: auto;
+  filter: brightness(0) invert(1);
 }
 
 .site-nav {
@@ -750,10 +748,6 @@ svg {
 .footer-inner {
   display: grid;
   gap: 22px;
-}
-
-.footer-logo {
-  color: var(--color-white);
 }
 
 .footer-nav {
