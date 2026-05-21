@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="株式会社イルミテックへのお問い合わせページです。AI・Web3・ブロックチェーン・メタバース関連のシステム開発・技術相談をお気軽にご相談ください。"
+      content="株式会社イルミテックへのお問い合わせページです。AI・Web3・ブロックチェーン関連のシステム開発・技術相談をお気軽にご相談ください。"
     />
     <title>お問い合わせ | 株式会社イルミテック</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <script src="assets/js/contact.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </head>
   <body>
     <header class="site-header" data-header>
@@ -61,10 +61,6 @@
                 <span>ブロックチェーンを活用したシステム開発、NFT関連、スマートコントラクトなど</span>
               </li>
               <li>
-                <strong>メタバース関連</strong>
-                <span>メタバースプロジェクトへの参画、デジタル空間での体験設計・実装など</span>
-              </li>
-              <li>
                 <strong>システム基盤構築</strong>
                 <span>サーバー環境の設計・構築、地産地消型データセンター構築など</span>
               </li>
@@ -78,63 +74,19 @@
               <p>
                 ご送信いただいた内容は、担当者が確認後、原則3営業日以内にご返信いたします。
               </p>
-              <p>
-                ※ 現在、送信先メールアドレスの設定準備中です。送信先が確定次第、フォームを正式に接続します。
-              </p>
             </div>
           </div>
 
           <div class="contact-page-form-wrap">
-            <form class="contact-form contact-form--page" id="contact-form" data-contact-page-form novalidate>
-              <div class="form-field">
-                <label for="name">お名前 <span class="required" aria-label="必須">*</span></label>
-                <input id="name" name="name" type="text" autocomplete="name" required placeholder="例：山田 太郎" />
-              </div>
-
-              <div class="form-field">
-                <label for="company">会社名・団体名</label>
-                <input id="company" name="company" type="text" autocomplete="organization" placeholder="例：株式会社〇〇" />
-              </div>
-
-              <div class="form-field">
-                <label for="email">メールアドレス <span class="required" aria-label="必須">*</span></label>
-                <input id="email" name="email" type="email" autocomplete="email" required placeholder="例：info@example.com" />
-              </div>
-
-              <div class="form-field">
-                <label for="category">お問い合わせ種別</label>
-                <select id="category" name="category">
-                  <option value="">選択してください（任意）</option>
-                  <option value="ai">AI・システム開発</option>
-                  <option value="web3">Web3・ブロックチェーン</option>
-                  <option value="metaverse">メタバース関連</option>
-                  <option value="infrastructure">システム基盤構築</option>
-                  <option value="other">その他・構想段階の相談</option>
-                </select>
-              </div>
-
-              <div class="form-field">
-                <label for="message">相談内容 <span class="required" aria-label="必須">*</span></label>
-                <textarea id="message" name="message" rows="7" required placeholder="ご相談の内容、現状の課題、実現したいことなどをご記入ください。"></textarea>
-              </div>
-
-              <div class="form-field form-field--checkbox">
-                <label class="checkbox-label">
-                  <input type="checkbox" name="privacy" value="agreed" required />
-                  <span>
-                    <a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>
-                    に同意する
-                    <span class="required" aria-label="必須">*</span>
-                  </span>
-                </label>
-              </div>
-
-              <button class="button button-primary button-full" type="submit">送信する</button>
-
-              <p class="form-note" data-contact-page-message>
-                ※ 現在は送信先未接続の仮フォームです。送信先メールアドレスが確定次第、正式に接続します。
-              </p>
-            </form>
+            <iframe
+              class="gform-iframe"
+              src="https://docs.google.com/forms/d/e/1FAIpQLSeO542EFDXuAt5ZcGo-c73-3ImQnlW9kMUa9gy9MMEh8dxUVQ/viewform?embedded=true"
+              height="1172"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="お問い合わせフォーム"
+            >読み込んでいます…</iframe>
           </div>
         </div>
       </section>
