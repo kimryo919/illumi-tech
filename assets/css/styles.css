@@ -77,7 +77,6 @@ svg {
 }
 
 .section-heading h2,
-.two-column h2,
 .company-grid h2,
 .related-card h2,
 .page-hero h1,
@@ -401,23 +400,12 @@ svg {
   transform: scale(1.04);
 }
 
-.service-card > .card-number,
-.service-card > h3,
-.service-card > p {
-  margin-left: 28px;
-  margin-right: 28px;
-}
-
-.service-card > .card-number {
-  margin-top: 28px;
-}
-
-.service-card > p {
-  margin-bottom: 36px;
-}
-
 .service-card {
   padding: 0;
+}
+
+.service-card-body {
+  padding: 28px;
 }
 
 .card-number {
@@ -1030,15 +1018,8 @@ svg {
     padding: 22px;
   }
 
-  .service-card > .card-number,
-  .service-card > h3,
-  .service-card > p {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  .service-card > p {
-    margin-bottom: 20px;
+  .service-card-body {
+    padding: 22px;
   }
 
   .profile-photo {
