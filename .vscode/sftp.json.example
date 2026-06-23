@@ -1,0 +1,17 @@
+{
+  "name": "illumitech-conoha",
+  "host": "www1171.conoha.ne.jp",
+  "protocol": "ftp",
+  "port": 21,
+  "secure": true,
+  "username": "www@illumitech.jp",
+  "password": "ここに上司からもらったパスワードを入れる",
+  "remotePath": "/home/c2373750/illumitech.jp/",
+  "uploadOnSave": false,
+  "ignore": [
+    "**/.git/**",
+    "**/*.md",
+    ".vscode/**",
+    "**/.DS_Store"
+  ]
+}

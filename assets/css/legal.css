@@ -14,8 +14,9 @@
 .legal-article h2 {
   margin: 0 0 20px;
   color: var(--color-navy);
-  font-size: 1.22rem;
-  line-height: 1.5;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
 }
 
 .legal-article p {

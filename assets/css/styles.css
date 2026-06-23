@@ -13,6 +13,29 @@
   --radius-medium: 18px;
   --radius-small: 12px;
   --container: 1120px;
+
+  /* タイプスケール（デスクトップ基準・固定値）
+     画面幅に連動して無段階に変化させず、ブレイクポイントで切り替える */
+  --fs-display: 3.5rem; /* ヒーロー大見出し */
+  --fs-h1: 2.5rem; /* 下層ページ見出し */
+  --fs-h2: 2.25rem; /* セクション見出し */
+  --fs-h3: 1.3rem;
+  --fs-lead-lg: 1.5rem; /* セクション冒頭の強調文 */
+  --fs-lead: 1.25rem; /* ヒーロー/ページ導入文 */
+  --fs-body: 1rem;
+  --fs-body-sm: 0.9375rem;
+  --fs-small: 0.875rem;
+  --fs-eyebrow: 0.78rem;
+  --fs-golfico: 3rem;
+  --fs-golfico-sub: 1.5rem;
+
+  /* 行間（全体で統一） */
+  --lh-display: 1.2;
+  --lh-heading: 1.4;
+  --lh-body: 1.8;
+
+  /* 字間（日本語はマイナスを使わない） */
+  --ls-heading: 0.01em;
 }
 
 * {
@@ -34,8 +57,23 @@ body {
     -apple-system,
     BlinkMacSystemFont,
     sans-serif;
-  line-height: 1.75;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
   background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+p {
+  text-wrap: pretty;
+  line-break: strict;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  line-break: strict;
 }
 
 body.is-menu-open {
@@ -85,9 +123,9 @@ svg {
 .contact-copy h2 {
   margin: 0;
   color: var(--color-navy);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.25;
-  letter-spacing: -0.03em;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
 }
 
 .section-heading p:not(.eyebrow),
@@ -104,7 +142,7 @@ svg {
 .eyebrow {
   margin: 0 0 12px;
   color: var(--color-blue);
-  font-size: 0.78rem;
+  font-size: var(--fs-eyebrow);
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -113,9 +151,18 @@ svg {
 .lead {
   margin: 0 0 18px;
   color: var(--color-navy);
-  font-size: clamp(1.2rem, 2.3vw, 1.55rem);
+  font-size: var(--fs-lead-lg);
   font-weight: 700;
-  line-height: 1.55;
+  line-height: var(--lh-heading);
+}
+
+/* 改行制御：意味の固まりで折り、固まりの中では割らない */
+.line {
+  display: inline-block;
+}
+
+.nb {
+  white-space: nowrap;
 }
 
 .button {
@@ -284,24 +331,19 @@ svg {
   max-width: 900px;
   margin: 0 0 24px;
   color: var(--color-white);
-  font-size: clamp(2.4rem, 5vw, 4.8rem);
-  line-height: 1.1;
-  letter-spacing: -0.05em;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-heading);
 }
 
 .hero-lead {
-  max-width: 900px;
+  max-width: 100%;
+  height: fit-content;
   margin: 0 0 18px;
   color: rgba(255, 255, 255, 0.92);
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-size: var(--fs-lead);
   font-weight: 700;
-  text-align: center;
-}
-
-.hero-text {
-  max-width: 900px;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.72);
+  line-height: var(--lh-body);
   text-align: center;
 }
 
@@ -420,16 +462,16 @@ svg {
 .principle-card h3 {
   margin: 0 0 20px;
   color: var(--color-navy);
-  font-size: 1.3rem;
-  line-height: 1.45;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-heading);
 }
 
 .service-card p,
 .principle-card p {
   margin: 0;
-  line-height: 2.0;
+  line-height: var(--lh-body);
   color: var(--color-slate);
-  font-size: 0.96rem;
+  font-size: var(--fs-body-sm);
 }
 
 .section-action {
@@ -437,20 +479,6 @@ svg {
   text-align: center;
 }
 
-.about-visual-wrap {
-  margin-top: 56px;
-  overflow: hidden;
-  border-radius: var(--radius-large);
-  line-height: 0;
-}
-
-.about-visual {
-  width: 100%;
-  height: clamp(240px, 36vw, 480px);
-  object-fit: cover;
-  object-position: center 40%;
-  display: block;
-}
 
 .related-section {
   background:
@@ -482,38 +510,56 @@ svg {
   align-items: center;
 }
 
-.golfico-heading {
+.golfico-body {
+  position: relative;
+}
+
+.golfico-header {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin: 10px 0 12px;
+  gap: 20px;
+  margin: 0 0 20px;
+}
+
+.golfico-title {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
 }
 
 .golfico-inline-logo {
   flex-shrink: 0;
-  border-radius: 12px;
-}
-
-.golfico-heading h2 {
-  margin: 0;
-}
-
-.golfico-tag {
-  display: inline-block;
-  background: var(--color-blue);
-  color: var(--color-white);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  padding: 4px 14px;
+  width: 96px;
+  height: 96px;
   border-radius: 20px;
-  margin: 0 0 18px;
 }
 
-.golfico-body p:not(.eyebrow):not(.golfico-tag) {
-  max-width: 560px;
-  margin-bottom: 28px;
+.golfico-title-name {
+  font-size: var(--fs-golfico);
+  font-weight: 800;
+  color: var(--color-navy);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
+
+.golfico-title-sub {
+  font-size: var(--fs-golfico-sub);
+  font-weight: 700;
+  color: var(--color-blue);
+  letter-spacing: var(--ls-heading);
+  line-height: 1.3;
+}
+
+.golfico-body p:not(.eyebrow) {
+  max-width: 560px;
+  margin-bottom: 24px;
+  color: var(--color-slate);
+  line-height: var(--lh-body);
+  font-size: var(--fs-body-sm);
+}
+
 
 .golfico-app-wrap {
   display: flex;
@@ -545,7 +591,8 @@ svg {
 
 .page-hero p {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: var(--fs-lead);
+  line-height: var(--lh-body);
 }
 
 .profile-grid {
@@ -602,7 +649,7 @@ svg {
 
 .profile-body h2 {
   margin-bottom: 2px;
-  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  font-size: var(--fs-h1);
 }
 
 .profile-kana {
@@ -777,8 +824,8 @@ svg {
 .contact-page-info h2 {
   margin: 0 0 28px;
   color: var(--color-navy);
-  font-size: clamp(1.5rem, 2.8vw, 2rem);
-  line-height: 1.3;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-heading);
 }
 
 .contact-topics {
@@ -898,9 +945,18 @@ svg {
 }
 
 /* ---- end Contact page ---- */
-}
 
 @media (max-width: 980px) {
+  :root {
+    --fs-display: 2.75rem;
+    --fs-h1: 2.125rem;
+    --fs-h2: 1.875rem;
+    --fs-lead-lg: 1.375rem;
+    --fs-lead: 1.15rem;
+    --fs-golfico: 2.5rem;
+    --fs-golfico-sub: 1.375rem;
+  }
+
   .section {
     padding: 78px 0;
   }
@@ -992,10 +1048,6 @@ svg {
     padding: 78px 0 70px;
   }
 
-  .hero h1 {
-    font-size: clamp(2.45rem, 14vw, 4rem);
-  }
-
   .hero-actions {
     display: grid;
   }
@@ -1044,5 +1096,19 @@ svg {
 
   .company-list dd {
     padding-top: 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --fs-display: 2.125rem;
+    --fs-h1: 1.75rem;
+    --fs-h2: 1.5rem;
+    --fs-h3: 1.2rem;
+    --fs-lead-lg: 1.25rem;
+    --fs-lead: 1.0625rem;
+    --fs-body-sm: 0.9375rem;
+    --fs-golfico: 2rem;
+    --fs-golfico-sub: 1.2rem;
   }
 }
